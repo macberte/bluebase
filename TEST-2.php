@@ -12,6 +12,16 @@ error illo quo consectetur, vero dolorem adipisci nam? Natus alias placeat fugia
 
 <body>
 
+  <!-- Comments -->
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6"></div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
