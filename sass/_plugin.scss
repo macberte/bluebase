@@ -1,0 +1,284 @@
+//main: style.scss
+
+/* --------------------------------------------------------
+Plugin
+-------------------------------------------------------- */
+/* ! Slick Slider - javascript
+----------------------------------------------------------*/
+.slick-loading .slick-list {
+  background: #fff url("./css/ajax-loader.gif") center center no-repeat;
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+
+  position: absolute;
+  top: 50%;
+
+  z-index: 10;
+  display: block;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+
+  cursor: pointer;
+
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+  background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: "fontello";
+  font-size: 25px;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  opacity: 0.75;
+  color: #000;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: -30px;
+}
+[dir="rtl"] .slick-prev {
+  right: -30px;
+  left: auto;
+}
+.slick-prev:before {
+  content: "\E811";
+}
+[dir="rtl"] .slick-prev:before {
+  content: "\E812";
+}
+
+.slick-next {
+  right: -30px;
+}
+[dir="rtl"] .slick-next {
+  right: auto;
+  left: -30px;
+}
+.slick-next:before {
+  content: "\E812";
+}
+[dir="rtl"] .slick-next:before {
+  content: "\E811";
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 0px;
+
+  display: block;
+
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+
+  text-align: center;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+
+  cursor: pointer;
+}
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  position: relative;
+
+  display: block;
+
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+
+  cursor: pointer;
+
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1;
+  // width: 8px;
+  // height: 8px;
+  transform: scale(1.2) translate(-50%, -50%);
+}
+.slick-dots li button:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(1) translate(-50%, -50%);
+
+  border-radius: 100%;
+  width: 5px;
+  height: 5px;
+  background: #000;
+  text-align: center;
+
+  opacity: 0.25;
+  transition: all 0.3s ease;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: black;
+  width: 8px;
+  height: 8px;
+}
+
+/* ! FancyBox - javascript
+-------------------------------------------------------- */
+.fancybox-thumbs__list a:before {
+  border: 3px solid $contrast_color;
+}
+.fancybox-progress {
+  background: $contrast_color;
+}
+.fancybox-thumbs {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ! Google Re-Captcha V3 aggiunto CF7
+-------------------------------------------------------- */
+.grecaptcha-badge {
+  display: none;
+}
+
+/* Social Share Plugin in single
+-----------------------------------------------------------*/
+.social-share-wrap {
+  position: relative;
+
+  .btn-share {
+    color: $title_color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    &:hover {
+      color: $primary_color;
+    }
+  }
+  .custom-social-share {
+    position: absolute;
+    right: -30px;
+    top: 130%;
+    transform: translateY(-50%);
+    width: 230px;
+    gap: 10px;
+    padding: 5px 2px;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    visibility: hidden;
+    opacity: 0;
+    a {
+      width: 25px;
+      height: 25px;
+      background: $primary_color;
+      position: relative;
+      transform: scale(1);
+      transition: all 0.2s ease-in;
+      border-radius: 2px;
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 16px;
+      }
+      &:hover {
+        transform: scale(1.2);
+        background: darken($primary_color, 20%);
+      }
+    }
+  }
+}
+.social-share-wrap.active {
+  .btn-share {
+    color: $primary_color;
+  }
+  .custom-social-share {
+    visibility: visible;
+    top: 100%;
+    opacity: 1;
+  }
+}
+
+/* Social Share page end
+-----------------------------------------------------------*/
+.social-share-end {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 15px 0;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  color: $title_color;
+  .custom-social-share {
+    margin: 0;
+    padding: 0;
+    i {
+      font-size: 18px;
+    }
+    a:hover {
+      color: $primary_color;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+/* Card-person
+----------------------------------------------------------*/
+.card-person-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card-person {
+  background: #fff;
+  /* margin: 15px; */
+}
+
+.card-person_body {
+  padding: 25px;
+  text-align: center;
+  min-height: 320px;
+}
+
+.card-person_title {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.card-person_title:after {
+  content: '';
+  display: inline-block;
+  width: 30%;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -15px;
+  border-bottom: 4px solid rgba(45, 54, 75, 0.18);
+}
+
+.card-person_text p {
+  margin-bottom: 15px;
+}
+
+.card-person_footer {
+  padding: 10px 25px;
+  background: rgba(45, 54, 75, 0.48);
+  color: #fff;
+}
+
+.card-person_footer a {
+  color: #fff;
+}
+
+.card-person_footer a:hover {
+  color: #2D364B;
+}
+
+.card-person_footer i {
+  margin-right: 10px;
+}

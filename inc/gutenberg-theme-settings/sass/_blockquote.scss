@@ -1,0 +1,85 @@
+//main: gutenberg-theme-style.scss
+
+/* BLOCCO: Blockquote - Default
+-----------------------------------------*/
+.wp-block-quote {
+  border-left: 4px solid $primary_color;
+  padding: 25px;
+  margin-left: 20px;
+  background: #f5f7f8;
+
+  p {
+    margin-bottom: 15px;
+  }
+}
+
+.wp-block-quote__citation,
+.wp-block-quote cite,
+.wp-block-quote footer {
+  color: #6c7781;
+  font-size: 0.9em;
+  margin-top: 1em;
+}
+
+/* BLOCCO: Blockquote - Grande is-style-large
+-----------------------------------------*/
+.is-style-large {
+  background: transparent;
+}
+
+/* BLOCCO: Citazione evidenziata
+-----------------------------------------*/
+
+.wp-block-pullquote,
+.wp-block-pullquote.is-style-solid-color {
+  border: none;
+  padding: 0px;
+  position: relative;
+  margin-left: 0;
+
+  blockquote {
+    margin-left: 0;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    position: relative;
+    background: $primary_color;
+    color: #fff;
+    border: none;
+    padding: 20px 20px 20px 55px;
+    text-align: left;
+
+    p {
+      font-size: 18px;
+      position: relative;
+
+      &:before {
+        content: '\E813';
+        font-family: 'fontello';
+        position: absolute;
+        color: #fff;
+        left: -38px;
+        top: -8px;
+        font-size: 28px;
+        opacity: 1;
+      }
+    }
+
+    &:after {
+      content: '';
+      z-index: -1;
+      width: 40px;
+      height: 40px;
+      background: $primary_color;
+      position: absolute;
+      bottom: -13px;
+      left: 10%;
+      -webkit-transform: rotate(39deg);
+      transform: rotate(39deg);
+    }
+  }
+
+  cite {
+    color: #fff;
+  }
+}

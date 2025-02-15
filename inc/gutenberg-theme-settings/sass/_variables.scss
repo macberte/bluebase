@@ -1,0 +1,78 @@
+//main: gutenberg-theme-style.scss
+
+/* --------------------------------------------------------
+Variables globali
+-------------------------------------------------------- */
+
+/*Theme color
+-------------------------------------------------------- */
+$primary_color: #198df4; // primary
+$secondary_color: #f20da5; //accent_color
+$third_color: #e91e63; // contrast_color
+
+//background
+$fourth_color: #004886; //dark bg
+$fifth_color: #f5f7f8; //soft bg
+$sixth_color: #f7f7f7; //soft_grey
+
+//standard color
+$red_color: #e91e63; //red
+$yellow_color: #ffe500; //yellow
+$green_color: #4caf50; //green
+$blue_color: #2196f3; //blue
+
+$white_color: #ffffff; //white
+$black_color: #000000; //black
+
+//special color
+$accent_color: $secondary_color;
+$contrast_color: $third_color;
+$dark_color: #004886;
+
+/* Fonts
+-----------------------------------------------------------*/
+$font_1: "Heebo", sans-serif;
+$font_2: "Heebo", sans-serif;
+
+/* Tipografy color
+-------------------------------------------------------- */
+$txt_color: #565656; //paragraph
+$title_color: #1c1c1c; //title
+
+//link color
+$link_color: $primary_color;
+$link_hover_color: $fourth_color;
+
+/* Sidebar color
+-------------------------------------------------------- */
+$sidebar_background: #f5f7f8;
+
+/* Button theme & gutenberg
+-----------------------------------------------------------*/
+$button_primary: $primary_color;
+$button_primary_hover: $primary_color;
+$button_secondary: $fifth_color;
+$button_primary_hover: $fourth_color;
+$button_secondary: $fifth_color;
+
+/* Element color
+-----------------------------------------------------------*/
+$border_color: #d8d8d8;
+
+/* --------------------------------------------------------
+Mixin
+-------------------------------------------------------- */
+@mixin main-container {
+  max-width: 1470px !important;
+  width: 90vw;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+}
+// @mixin content-container {
+//   max-width: 950px !important;
+//   width: 90vw;
+//   padding-right: 15px;
+//   padding-left: 15px;
+//   margin: 0 auto;
+// }

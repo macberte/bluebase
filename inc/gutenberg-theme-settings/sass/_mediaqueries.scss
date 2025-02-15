@@ -1,0 +1,72 @@
+//main: gutenberg-theme-style.scss
+
+/* --------------------------------------------------------
+Desktop-small
+-------------------------------------------------------- */
+@media (max-width: 991px) {
+  /* Alignwide 
+-------------------------------------------------------- */
+  .alignwide {
+    width: auto !important;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .alignwide img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* --------------------------------------------------------
+Tablet
+-------------------------------------------------------- */
+@media (max-width: 767px) {
+  /* BLOCCO: Cover
+  -------------------------------------------------------- */
+  .wp-block-cover-image .wp-block-cover__inner-container,
+  .wp-block-cover .wp-block-cover__inner-container {
+    width: calc(100% - 15px);
+  }
+
+  /* BLOCCO: Media Text
+  -------------------------------------------------------- */
+  .wp-block-media-text .wp-block-media-text__content {
+    padding: 30px 15px 0 15px;
+  }
+
+  /* BLOCCO: Gallery
+  -------------------------------------------------------- */
+  .wp-block-gallery .blocks-gallery-item {
+    width: calc(50% - 5px);
+  }
+
+  .wp-block-gallery .blocks-gallery-item:nth-of-type(even) {
+    margin-right: 0px;
+    margin-left: 5px;
+  }
+  .wp-block-gallery .blocks-gallery-item:nth-of-type(odd) {
+    margin-left: 0px;
+    margin-right: 5px;
+  }
+  .wp-block-gallery.columns-3 .blocks-gallery-item:last-child {
+    margin-right: 0;
+  }
+  .wp-block-gallery.columns-7 .blocks-gallery-item:last-child {
+    margin-right: 0;
+  }
+}
+
+/* --------------------------------------------------------
+Smartphone
+-------------------------------------------------------- */
+
+@media (max-width: 575px) {
+  /* BLOCCO: Media Text
+  -------------------------------------------------------- */
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media,
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+    padding: 0;
+  }
+}

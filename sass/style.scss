@@ -1,0 +1,45 @@
+//compileNested: ../$1.css
+
+/*
+Theme Name: Blubase
+Theme URI: http://www.saltonelweb.it/startertheme
+Author: Fabio Bertelegni
+Author URI: http://www.saltonelweb.it/
+Description: blubase with Bootstrap 4.3.1 and Fontello. Plugin [ WayPoint, FamcyBox, Slick Slider, touchSwipe]
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, custom-header,
+Text Domain: blubase
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import "../inc/gutenberg-theme-settings/sass/variables";
+@import "fonts";
+@import "global";
+@import "components";
+@import "header";
+@import "footer";
+
+@import "plugin";
+
+@import "form";
+@import "form-type-icon";
+@import "form-type-elegant";
+
+@import "animation";
+@import "utility";
+@import "helpers";
+
+@import "home";
+@import "page";
+@import "template";
+@import "archive";
+@import "sidebar";
+
+@import "comments";
+@import "search";
+
+@import "mediaquery";

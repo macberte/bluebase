@@ -1,0 +1,107 @@
+//main: gutenberg-theme-style.scss
+
+/* Button - GLOBAL
+-----------------------------------------*/
+.wp-block-buttons.alignright {
+  text-align: right;
+}
+
+.wp-block-buttons.aligncenter {
+  text-align: center;
+}
+
+.wp-block-buttons .wp-block-button:first-child {
+  margin-left: 0;
+}
+
+.wp-block-buttons .wp-block-button:last-child {
+  margin-right: 0;
+}
+
+/* Button - DEFAULT
+-----------------------------------------*/
+.wp-block-button__link {
+  display: inline-block;
+  padding: 12px 26px;
+  background: $button_primary;
+  border: 1px solid $button_primary;
+  color: white;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.wp-block-button__link:hover {
+  text-decoration: none;
+  color: $third_color;
+}
+
+.wp-block-button__link:not(.has-text-color) {
+  color: white;
+}
+
+.wp-block-button__link:not(.has-text-color):hover {
+  color: $title_color;
+}
+
+.wp-block-button__link:not(.has-background) {
+  border: 1px solid $primary_color;
+  background-color: $primary_color;
+}
+
+.wp-block-button__link:not(.has-background):hover,
+.wp-block-button__link:not(.has-background):focus {
+  background-color: transparent;
+}
+
+.wp-block-button {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+/* BUTTON - Secondo Stile
+----------------------------------------------------------*/
+.wp-block-button.is-style-btn-second {
+  .wp-block-button__link:not(.has-text-color) {
+    color: $title_color;
+  }
+
+  .wp-block-button__link:not(.has-background) {
+    background-color: transparent;
+  }
+
+  .wp-block-button__link:not(.has-background):hover,
+  .wp-block-button__link:not(.has-background):focus {
+    background-color: $primary_color;
+  }
+
+  .wp-block-button__link:not(.has-text-color):hover,
+  .wp-block-button__link:not(.has-text-color):focus {
+    color: white;
+  }
+}
+
+/* BUTTON - Terzo Stile
+----------------------------------------------------------*/
+.wp-block-button.is-style-btn-third {
+  .wp-block-button__link:not(.has-text-color) {
+    color: white;
+  }
+  z .wp-block-button__link:not(.has-background) {
+    border: 1px solid $accent_color;
+    background-color: $accent_color;
+  }
+
+  .wp-block-button__link:not(.has-background):hover,
+  .wp-block-button__link:not(.has-background):focus {
+    background-color: transparent;
+  }
+
+  .wp-block-button__link:not(.has-text-color):hover,
+  .wp-block-button__link:not(.has-text-color):focus {
+    color: $title_color;
+  }
+}

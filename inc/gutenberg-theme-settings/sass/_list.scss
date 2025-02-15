@@ -1,0 +1,18 @@
+//main: gutenberg-theme-style.scss
+
+ul.is-style-check {
+  list-style: none;
+
+  li {
+    position: relative;
+
+    &:before {
+      font-family: 'fontello';
+      content: '\E81F';
+      position: absolute;
+      left: -30px;
+      top: 0px;
+      color: $primary_color;
+    }
+  }
+}

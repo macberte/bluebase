@@ -1,0 +1,50 @@
+.gallery-acf .thumb-acf-gallery {
+  float: left;
+  border: 4px solid transparent;
+}
+
+.gallery-acf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* overlay-box disattivato perchè codice già presente nel tema in _utility.css
+-------------------------------------------------------- */
+/* .overlay-box {
+  position: relative;
+  display: block; }
+  .overlay-box img {
+    width: 100%; }
+  .overlay-box .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: #262D36;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
+    .overlay-box .overlay i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%) scale(3, 3);
+      transform: translate(-50%, -50%) scale(3, 3);
+      color: #fff;
+      opacity: 0;
+      font-size: 30px;
+      -webkit-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out; }
+
+.overlay-box:hover {
+  position: relative; }
+  .overlay-box:hover .overlay {
+    opacity: 0.70; }
+    .overlay-box:hover .overlay i {
+      -webkit-transform: translate(-50%, -50%) scale(1, 1);
+      transform: translate(-50%, -50%) scale(1, 1);
+      opacity: 1;
+      font-size: 30px; } */

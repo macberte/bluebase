@@ -1,0 +1,201 @@
+//main: gutenberg-theme-style.scss
+
+$wp-block_spaceBottom: 30px;
+
+/* ! Alignfull
+-------------------------------------------------------- */
+//Bill Eriksen alignFull -> body overflow-x: hidden; - Fix Scroll
+.alignfull {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  max-width: 100vw;
+  width: 100vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+/* ! Alignwide
+-------------------------------------------------------- */
+.alignwide {
+  width: auto !important;
+  max-width: 1000%;
+  margin-left: calc(27% - 27vw);
+  margin-right: calc(27% - 27vw);
+}
+
+/* ! BLOCCO: Table
+-------------------------------------------------------- */
+.wp-block-table table {
+  td {
+    &:before {
+      content: "";
+      display: inline-block;
+      min-height: 20px;
+    }
+  }
+}
+
+.wp-block-table {
+  overflow-x: auto;
+  margin-bottom: $wp-block_spaceBottom;
+}
+
+/* ! BLOCCO: Paragrafo background
+-------------------------------------------------------- */
+p.has-background {
+  margin-bottom: 30px;
+}
+
+/* ! BLOCCO: Cover
+-------------------------------------------------------- */
+.wp-block-cover,
+.wp-block-cover-image {
+  height: auto;
+  margin-bottom: $wp-block_spaceBottom;
+  .wp-block-cover__inner-container {
+    @include main-container;
+  }
+}
+/* ! BLOCCO: Colonne
+-------------------------------------------------------- */
+.wp-block-columns {
+  margin-bottom: $wp-block_spaceBottom;
+  column-gap: 30px;
+}
+
+/* ! BLOCCO: Group
+-------------------------------------------------------- */
+.wp-block-group {
+  margin-bottom: $wp-block_spaceBottom;
+}
+.wp-block-group.alignfull {
+  > .wp-block-group__inner-container {
+    @include main-container;
+  }
+}
+
+/* ! BLOCCO: Media Text
+  -------------------------------------------------------- */
+.wp-block-media-text {
+  margin-bottom: $wp-block_spaceBottom;
+  gap: 20px;
+}
+.wp-block-media-text .wp-block-media-text__content {
+  padding: 25px 0px 0px 20px;
+}
+
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+  padding-right: 30px;
+  padding-left: 0;
+}
+
+/* ! BLOCCO: File - Download
+-------------------------------------------------------- */
+.wp-block-file {
+  margin-bottom: 30px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  a {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  a.wp-block-file__button {
+    flex-shrink: none;
+    border-radius: 0;
+    border: 1px solid $primary_color;
+    font-size: 11px;
+    margin-left: 0;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    background: $primary_color;
+    display: inline-block;
+    &:before {
+      content: "\E80F";
+      font-family: "fontello";
+      position: relative;
+      margin-right: 10px;
+      top: -1px;
+      font-size: 13px;
+    }
+    &:hover {
+      text-decoration: none !important;
+      opacity: 1;
+      background: transparent;
+      color: $primary_color;
+    }
+  }
+}
+
+/* BLOCCO: Pulsanti
+-----------------------------------------------------------*/
+.wp-block-buttons {
+  margin-bottom: $wp-block_spaceBottom;
+}
+.wp-block-buttons-is-layout-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* ! BLOCCO: Gallery
+-------------------------------------------------------- */
+$margin_gallery: 10px;
+
+.wp-block-gallery {
+  margin-bottom: $wp-block_spaceBottom;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ! BLOCCO: image con Link
+-------------------------------------------------------- */
+.wp-block-image {
+  a {
+    display: inline-block;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background: #000;
+      transition: all 0.3s ease-out;
+      pointer-events: none; //Trick che permette l'effetto zoom di FancyBox
+    }
+
+    &:after {
+      content: "\E803";
+      font-family: "fontello";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(3);
+      color: #fff;
+      opacity: 0;
+      font-size: 30px;
+      transition: all 0.3s ease-out;
+      pointer-events: none; //Trick che permette l'effetto zoom di FancyBox
+    }
+
+    &:hover {
+      &:before {
+        opacity: 0.7;
+      }
+
+      &:after {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        font-size: 30px;
+      }
+    }
+  }
+}

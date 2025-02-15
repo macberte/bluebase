@@ -1,0 +1,108 @@
+/* --------------------------------------------------------
+Variables globali
+-------------------------------------------------------- */
+/*Theme color
+-------------------------------------------------------- */
+/* Fonts
+-----------------------------------------------------------*/
+/* Tipografy color
+-------------------------------------------------------- */
+/* Sidebar color
+-------------------------------------------------------- */
+/* Button theme & gutenberg
+-----------------------------------------------------------*/
+/* Element color
+-----------------------------------------------------------*/
+/* --------------------------------------------------------
+Mixin
+-------------------------------------------------------- */
+html :where(.wp-block) {
+  max-width: 950px;
+}
+
+/* TEXT ELEMENT
+-----------------------------------------------------------*/
+.editor-styles-wrapper {
+  font-family: "Heebo", sans-serif;
+  font-size: 16px;
+  color: #565656;
+  font-weight: 400;
+  line-height: 1.6em;
+  font-weight: 400;
+  overflow-x: clip;
+  /* Button
+  -----------------------------------------------------------*/
+}
+.editor-styles-wrapper p {
+  line-height: 1.6em;
+  font-size: 16px;
+  font-weight: 400;
+}
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+  font-weight: 700;
+  font-family: "Heebo", sans-serif;
+  color: #1c1c1c;
+  margin-bottom: 0.6em;
+  line-height: 1.2;
+  word-break: break-word;
+}
+.editor-styles-wrapper h1 {
+  font-size: 2.8rem;
+}
+.editor-styles-wrapper h2 {
+  font-size: 2.4rem;
+}
+.editor-styles-wrapper h3 {
+  font-size: 1.7rem;
+}
+.editor-styles-wrapper h4 {
+  font-size: 1.4rem;
+}
+.editor-styles-wrapper h5 {
+  font-size: 1.1rem;
+}
+.editor-styles-wrapper h6 {
+  font-size: 0.9rem;
+}
+.editor-styles-wrapper a {
+  color: #198df4;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.editor-styles-wrapper a:hover {
+  color: #004886;
+}
+.editor-styles-wrapper ul {
+  margin-bottom: 30px;
+}
+.editor-styles-wrapper ul li {
+  padding-bottom: 4px;
+}
+.editor-styles-wrapper .wp-block .wp-block-button__link {
+  font-size: 1rem;
+}
+.editor-styles-wrapper .wp-block-button__link {
+  font-family: "Heebo", sans-serif;
+  display: inline-block;
+  padding: 12px 26px;
+  background: #198df4;
+  border: 1px solid #198df4;
+  color: white;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.editor-styles-wrapper .wp-block-pullquote blockquote p {
+  color: #fff;
+}

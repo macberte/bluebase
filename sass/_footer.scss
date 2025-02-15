@@ -1,0 +1,79 @@
+//main: style.scss
+
+/* =========================================================
+  FOOTER
+/*=========================================================*/
+
+/* Variabili footer
+-----------------------------------------------------------*/
+$footer_topbar_bg: $primary_color;
+$footer_bg_color: #191919;
+$footer_title_color: $white_color;
+$footer_txt_color: #fff;
+$footer_link_hover: #00b7ff;
+
+$footer_credits_bg: #0e0e0e;
+
+.top-footer {
+  background: $footer_topbar_bg;
+  height: 5px;
+}
+
+.padding-footer {
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+footer {
+  color: $footer_txt_color;
+  background: $footer_bg_color;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h5,
+  p,
+  a {
+    color: $footer_title_color;
+  }
+
+  .widget {
+    h3.widget-title {
+      font-size: 20px;
+      color: $footer_title_color;
+    }
+
+    a {
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+  }
+
+  /* Widget & sections
+  -----------------------------------------------------------*/
+  .footer-1 {
+    section {
+      text-align: center;
+    }
+
+    img.logo-footer {
+      width: 200px;
+    }
+  }
+
+  .credits {
+    font-size: 12px;
+    background: $footer_credits_bg;
+    color: #d8d8d8;
+    letter-spacing: 1.1px;
+
+    a:hover {
+      color: $link_color;
+      text-decoration: none;
+    }
+  }
+}
+
+// .footer
