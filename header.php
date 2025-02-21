@@ -6,8 +6,8 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Only if SEO by Yoast not work -->
-  <?php if (!is_plugin_active('wordpress-seo/wp-seo.php')) { ?>
+  <!-- Only if SEO Rank Math not work -->
+  <?php if (!is_plugin_active('seo-by-rank-math/rank-math.php')) { ?>
   <meta name="description" content="<?php bloginfo('description'); ?>">
   <title><?php wp_title(); ?></title>
   <?php }?>
