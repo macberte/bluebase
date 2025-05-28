@@ -158,48 +158,6 @@
   <!-- Main Overlay -->
   <div class="main-overlay"></div>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuTriggers = document.querySelectorAll('.menu-item-has-children > a');
 
-    menuTriggers.forEach(trigger => {
-      trigger.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-
-          const parent = trigger.closest('.menu-item-has-children');
-          const isOpen = parent.classList.contains('open');
-
-          // Chiudi tutti gli altri
-          document.querySelectorAll('.menu-item-has-children.open').forEach(item => {
-            item.classList.remove('open');
-            const link = item.querySelector('a');
-            if (link) link.setAttribute('aria-expanded', 'false');
-          });
-
-          // Toggle apertura
-          if (!isOpen) {
-            parent.classList.add('open');
-            trigger.setAttribute('aria-expanded', 'true');
-          } else {
-            parent.classList.remove('open');
-            trigger.setAttribute('aria-expanded', 'false');
-          }
-        }
-      });
-
-      // Chiudi con click fuori
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.menu-item-has-children')) {
-          document.querySelectorAll('.menu-item-has-children.open').forEach(item => {
-            item.classList.remove('open');
-            const link = item.querySelector('a');
-            if (link) link.setAttribute('aria-expanded', 'false');
-          });
-        }
-      });
-    });
-  });
-  </script>
   <!-- MAIN CONTENT close in footer-->
   <main id="main-content">
