@@ -1,3 +1,5 @@
+</main><!-- Main Content open in header -->
+
 <footer>
 
   <div class="top-footer"></div>

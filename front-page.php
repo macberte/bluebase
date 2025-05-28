@@ -3,6 +3,7 @@
 <!-- SEO Title -->
 <h1 class="seo-title"><?php the_field('seo-h1_home_page', 'option'); ?></h1>
 
+
 <div class="hero parallax-animation"
   style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/cover-lake.jpg')">
   <div class="filter"></div>

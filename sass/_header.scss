@@ -27,6 +27,24 @@ $toggle_color: $title_color;
 $toggle_active_color: $primary_color;
 
 /* --------------------------------------------------------
+* ! Accessibility ACT
+/*-------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+/* --------------------------------------------------------
 * ! TOP BAR
 /*-------------------------------------------------------- */
 .top-bar {
@@ -258,7 +276,8 @@ li.menu-item-has-children a:before {
 }
 
 //Animazione sub menu
-.menu-item-has-children:hover {
+.menu-item-has-children:hover,
+.menu-item-has-children.open {
   > .sub-menu {
     transition: all 0.3s ease;
     visibility: visible;

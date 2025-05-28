@@ -831,6 +831,32 @@ function my_wp_nav_menu_objects($items, $args)
     return $items;
 }
 
+/*=========================================================================
+ACF ADD MENU ICON
+=========================================================================*/
+function my_wp_nav_menu_objects($items, $args)
+{
+    // loop
+    foreach ($items as &$item) {
+        // vars
+        $icon = get_field('mn_icon', $item);
+
+        // append icon
+        if ($icon) {
+            $item->title .=
+                '<span class="mn-icon"><img src="'.
+                $icon['sizes']['thumbnail'].
+                '" alt="'.
+                $icon['alt'].
+                '"/></span>';
+        }
+    }
+
+    // return
+    return $items;
+}
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
 /* Disabilita Gutenberg per certi tipi di post
  -------------------------------------------------------- */
 add_filter('use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2);

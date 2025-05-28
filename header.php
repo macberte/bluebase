@@ -20,8 +20,9 @@
 
 <body <?php body_class(''); ?>>
   <?php wp_body_open(); ?>
+  <a href="#main-content" class="skip-link" title="Skip to main content">Salta al contenuto principale</a>
 
-  <header class="main-header">
+  <header class="main-header" role="banner">
     <!-- TOP-BAR -->
     <div class="top-bar d-none d-lg-block">
       <div class="container">
@@ -30,7 +31,7 @@
           <div class="col-lg-6 text-left">
             <a href="https://www.google.com/maps/dir/44.9916305,8.9978201/nate+centro+riparazioni/@44.9925405,8.9991396,17z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x47873eeec959d753:0x13d41efe3fe80223!2m2!1d9.0041662!2d44.9942604!3e0"
               target="_blank" class="mr-3"> <i class="icon-location"></i> Via Don Minzoni 62, Voghera (PV)</a>
-            <a href="mailto:info@miaazienda.it"><i class="icon-mail"></i> info@nomeazienda.it</a>
+            <a href="mailto:info@nomeazienda.it"><i class="icon-mail"></i> info@nomeazienda.it</a>
           </div>
 
           <div class="col-lg-6 text-right">
@@ -57,11 +58,11 @@
 
 
         <!-- menu-wrap Menu-desktop -->
-        <nav class="nav-container">
+        <nav class="nav-container" role="navigation" aria-label="Menu principale">
 
           <!-- Menu -->
           <?php wp_nav_menu([
-              'menu' => 'main-menu',
+              //'menu' => 'main-menu',
               'theme_location' => 'main-menu',
               'container' => '',
               'container_id' => '',
@@ -74,7 +75,7 @@
 
           <!-- CTA Call -->
           <div class="cta-btn-phone stagger">
-            <a href="tel:+390383212368"><i class="icon-phone"></i> 0383 21 23 68</a>
+            <a href="tel:+390383212368" title="Chiamaci"><i class="icon-phone"></i> 0383 21 23 68</a>
           </div>
 
           <!-- Only Mobile -->
@@ -156,3 +157,49 @@
 
   <!-- Main Overlay -->
   <div class="main-overlay"></div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuTriggers = document.querySelectorAll('.menu-item-has-children > a');
+
+    menuTriggers.forEach(trigger => {
+      trigger.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+
+          const parent = trigger.closest('.menu-item-has-children');
+          const isOpen = parent.classList.contains('open');
+
+          // Chiudi tutti gli altri
+          document.querySelectorAll('.menu-item-has-children.open').forEach(item => {
+            item.classList.remove('open');
+            const link = item.querySelector('a');
+            if (link) link.setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle apertura
+          if (!isOpen) {
+            parent.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+          } else {
+            parent.classList.remove('open');
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+
+      // Chiudi con click fuori
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.menu-item-has-children')) {
+          document.querySelectorAll('.menu-item-has-children.open').forEach(item => {
+            item.classList.remove('open');
+            const link = item.querySelector('a');
+            if (link) link.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    });
+  });
+  </script>
+  <!-- MAIN CONTENT close in footer-->
+  <main id="main-content">

@@ -356,25 +356,15 @@ add_filter('get_the_archive_title', function ($title) {
     return $title;
 });
 
+
 /*=========================================================================
-Form - Widget search - modifica l'output HTML del button search form di wordpress
+Excerpt lenght
 =========================================================================*/
-function my_search_form($form)
+function blubase_excerpt_length($length)
 {
-    $form =
-    '<form role="search" method="get" id="searchform" class="search-form" action="'.
-    home_url('/').
-    '" >
-    <input type="text" value="'.
-    get_search_query().
-        '" name="s" id="s" class="form-input" placeholder="Cerca...">
-	<button type="submit" id="searchsubmit"><i class="icon-search"></i></button>
-    </form>';
-
-    return $form;
+    return 16; // Di default WP usa 55 parole, in questo caso 20
 }
-
-add_filter('get_search_form', 'my_search_form');
+add_filter('excerpt_length', 'blubase_excerpt_length', 999);
 
 /*=========================================================================
 Class Menu active (Aggiunge classe active alla voce di menu)
@@ -392,48 +382,47 @@ function special_nav_class($classes, $item)
 add_filter('nav_menu_css_class', 'special_nav_class', 10, 2);
 
 /*=========================================================================
-Excerpt lenght
+  Accessibility ACT
 =========================================================================*/
-function blubase_excerpt_length($length)
-{
-    return 16; // Di default WP usa 55 parole, in questo caso 20
+
+/* Aggiunge role="menubar" al <ul> principale 
+--------------------------------------------------------------------------*/
+function add_role_to_menu_ul($args) {
+  if (isset($args['theme_location']) && $args['theme_location'] === 'main-menu') {
+    $args['items_wrap'] = '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>';
+  }
+  return $args;
 }
-add_filter('excerpt_length', 'blubase_excerpt_length', 999);
+add_filter('wp_nav_menu_args', 'add_role_to_menu_ul');
 
-/*=========================================================================
-Add class to button submit (sensei theme)
-=========================================================================*/
-function wpdocs_comment_form_defaults($defaults)
-{
-    $defaults['class_submit'] = 'btn-primary animate';
-
-    return $defaults;
+/* Aggiunge role="menuitem" ai <li> del menu 
+--------------------------------------------------------------------------*/
+function add_role_to_menu_li_elements($menu) {
+  // Aggiunge role="menuitem" a tutti i <li> del menu
+  $menu = str_replace('<li', '<li role="menuitem"', $menu);
+  return $menu;
 }
+add_filter('wp_nav_menu', 'add_role_to_menu_li_elements', 20);
 
-add_filter('comment_form_defaults', 'wpdocs_comment_form_defaults');
 
-/*=========================================================================
-ACF ADD MENU ICON
-=========================================================================*/
-function my_wp_nav_menu_objects($items, $args)
-{
-    // loop
-    foreach ($items as &$item) {
-        // vars
-        $icon = get_field('mn_icon', $item);
-
-        // append icon
-        if ($icon) {
-            $item->title .=
-                '<span class="mn-icon"><img src="'.
-                $icon['sizes']['thumbnail'].
-                '" alt="'.
-                $icon['alt'].
-                '"/></span>';
-        }
+/* Aggiunge aria-haspopup e aria-expanded ai link con figli 
+--------------------------------------------------------------------------*/
+function add_aria_to_menu_links($atts, $item, $args) {
+  // Rimuoviamo role="menuitem", ora lo mettiamo sui <li>
+  if (isset($args->theme_location) && $args->theme_location === 'main-menu') {
+    if (in_array('menu-item-has-children', $item->classes)) {
+      $atts['aria-haspopup'] = 'true';
+      $atts['aria-expanded'] = 'false';
     }
-
-    // return
-    return $items;
+  }
+  return $atts;
 }
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+add_filter('nav_menu_link_attributes', 'add_aria_to_menu_links', 10, 3);
+
+
+/* Aggiunge role="menu" alle <ul class="sub-menu"> 
+--------------------------------------------------------------------------*/
+function add_role_to_submenus($menu) {
+  return str_replace('<ul class="sub-menu"', '<ul class="sub-menu" role="menu"', $menu);
+}
+add_filter('wp_nav_menu', 'add_role_to_submenus');

@@ -488,6 +488,26 @@ Header
 * ! VARIABILI LOCALI
 /*-------------------------------------------------------- */
 /* --------------------------------------------------------
+* ! Accessibility ACT
+/*-------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  -webkit-transition: top 0.3s ease;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* --------------------------------------------------------
 * ! TOP BAR
 /*-------------------------------------------------------- */
 .top-bar {
@@ -728,14 +748,16 @@ li.menu-item-has-children a:before {
   left: 0;
 }
 
-.menu-item-has-children:hover > .sub-menu {
+.menu-item-has-children:hover > .sub-menu,
+.menu-item-has-children.open > .sub-menu {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   visibility: visible;
   top: 100%;
   opacity: 1;
 }
-.menu-item-has-children:hover > .sub-menu li a {
+.menu-item-has-children:hover > .sub-menu li a,
+.menu-item-has-children.open > .sub-menu li a {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
