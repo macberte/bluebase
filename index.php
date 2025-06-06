@@ -27,7 +27,6 @@ echo wp_get_attachment_image($cover_archive, $size);?>
 
   <div class="filter" style="opacity: 0.6; background-color:#000;"></div>
 
-
   <div class="container">
     <div class="row py-3">
       <div class="col-12 way-animate fadeUp">
@@ -54,12 +53,12 @@ echo wp_get_attachment_image($cover_archive, $size);?>
 
       <div class="col-12 meta-accordion-wrap mb-4">
 
-        <span class="btn-accordion-meta">
+        <button class="btn-accordion-meta" aria-expanded="false">
           <span>
-            <i class="icon-cs-close"></i>
+            <i class="icon-cs-close" aria-hidden="true"></i>
           </span>
           Categorie e tags
-        </span>
+        </button>
 
         <div class="accordion-meta">
 
@@ -102,54 +101,54 @@ if (!empty($tags)) {
     while (have_posts()):
         the_post();?>
 
-		      <!-- CARD-ARCHIVE-BLOG -->
-		      <div class="col-lg-4 col-md-6 mb-5">
-		        <div class="card-blog">
+      <!-- CARD-ARCHIVE-BLOG -->
+      <div class="col-lg-4 col-md-6 mb-5">
+        <div class="card-blog">
 
-		          <div class="card-blog_label">
-		            <?php
+          <div class="card-blog_label">
+            <?php
         foreach (get_the_category() as $category) {
             echo "<span>";
             echo $category->name;
             echo "</span>";
         }?>
-		          </div>
-		          <!-- Se ha l'immagine in evidenza -->
-		          <?php if (has_post_thumbnail()) {?>
-		          <a href="<?php the_permalink();?>" title="<?php the_title();?>">
-		            <figure class="card-blog_image overlay-box">
-		              <?php the_post_thumbnail('medium_large', [
+          </div>
+          <!-- Se ha l'immagine in evidenza -->
+          <?php if (has_post_thumbnail()) {?>
+          <a href="<?php the_permalink();?>" title="<?php the_title();?>">
+            <figure class="card-blog_image overlay-box">
+              <?php the_post_thumbnail('medium_large', [
             'class' => 'img-fluid w-100',
             'alt' => get_the_title(),
         ]);?>
-		            </figure>
-		          </a>
+            </figure>
+          </a>
 
-		          <!-- Se non ha l'immagine in evidenza -->
-		          <?php } else {?>
-		          <a href="<?php the_permalink();?>" title="<?php the_title();?>">
-		            <figure class="card-blog_image overlay-box">
-		              <img src="<?php echo get_template_directory_uri(); ?>/img/no-photo_3_2.jpg" alt="no image">
-		            </figure>
-		          </a>
-		          <?php }?>
+          <!-- Se non ha l'immagine in evidenza -->
+          <?php } else {?>
+          <a href="<?php the_permalink();?>" title="<?php the_title();?>">
+            <figure class="card-blog_image overlay-box">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/no-photo_3_2.jpg" alt="no image">
+            </figure>
+          </a>
+          <?php }?>
 
-		          <div class="card-blog_content">
-		            <span class="card-blog_meta">
-		              <i class="icon-calendar-empty"></i> <?php the_time(
+          <div class="card-blog_content">
+            <span class="card-blog_meta">
+              <i class="icon-calendar-empty" aria-hidden="true"></i> <?php the_time(
             'j F Y'
         );?></span>
-		            <h3 class="card-blog_title"><?php the_title();?></h3>
+            <h3 class="card-blog_title"><?php the_title();?></h3>
 
-		            <a href="<?php the_permalink();?>" title="<?php the_title();?>" class="btn-primary inverse">Leggi
-		              tutto</a>
-		          </div>
+            <a href="<?php the_permalink();?>" title="<?php the_title();?>" class="btn-primary inverse">Leggi
+              tutto</a>
+          </div>
 
-		        </div>
-		      </div>
-		      <!-- ./CARD-ARCHIVE-BLOG -->
+        </div>
+      </div>
+      <!-- ./CARD-ARCHIVE-BLOG -->
 
-		      <?php
+      <?php
     endwhile;
 else:
 ?>

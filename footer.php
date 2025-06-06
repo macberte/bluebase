@@ -1,6 +1,6 @@
 </main><!-- Main Content open in header -->
 
-<footer>
+<footer role="contentinfo">
 
   <div class="top-footer"></div>
   <!-- Area Widget -->

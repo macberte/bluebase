@@ -300,8 +300,20 @@ li.menu-item-has-children a:before {
   position: relative;
 
   .toggle {
+    &:focus {
+      background-color: transparent;
+      background: transparent;
+      border: none;
+      //outline: none;
+    }
+    &:visited {
+      background-color: transparent;
+      background: transparent;
+    }
+    background-color: transparent;
     width: 32px;
     height: 20px;
+    border: none;
     position: relative;
     transform: rotate(0deg);
     transition: 0.5s ease-in-out;

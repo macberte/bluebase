@@ -14,8 +14,8 @@
           <h2 class="hero-title_big">Lorem ipsum dolor sit amet</h2>
           <h3 class="hero-title_small">Lasciati guidare dall'emozione</h3>
           <div class="hero-button mt-5">
-            <a href="#jump-corsi" class="btn-primary mr-4">I nostri corsi</a>
-            <a href="#" class="btn-primary empty white">certificazioni</a>
+            <a href="#jump-corsi" class="btn-primary mr-4" title="Vai ai nostri corsi">I nostri corsi</a>
+            <a href="#" class="btn-primary empty white" title="Vai alle certificazioni">certificazioni</a>
           </div>
 
         </div>

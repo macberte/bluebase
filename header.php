@@ -22,7 +22,7 @@
   <?php wp_body_open(); ?>
   <a href="#main-content" class="skip-link" title="Skip to main content">Salta al contenuto principale</a>
 
-  <header class="main-header" role="banner">
+  <header role="banner" class="main-header">
     <!-- TOP-BAR -->
     <div class="top-bar d-none d-lg-block">
       <div class="container">
@@ -30,15 +30,17 @@
 
           <div class="col-lg-6 text-left">
             <a href="https://www.google.com/maps/dir/44.9916305,8.9978201/nate+centro+riparazioni/@44.9925405,8.9991396,17z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x47873eeec959d753:0x13d41efe3fe80223!2m2!1d9.0041662!2d44.9942604!3e0"
-              target="_blank" class="mr-3"> <i class="icon-location"></i> Via Don Minzoni 62, Voghera (PV)</a>
-            <a href="mailto:info@nomeazienda.it"><i class="icon-mail"></i> info@nomeazienda.it</a>
+              target="_blank" class="mr-3" title="Naviga con Google Maps"> <i class="icon-location"
+                aria-hidden="true"></i> Via Don Minzoni 62, Voghera
+              (PV)</a>
+            <a href="mailto:info@nomeazienda.it"><i class="icon-mail" aria-hidden="true"></i> info@nomeazienda.it</a>
           </div>
 
           <div class="col-lg-6 text-right">
             <a href="https://www.facebook.com/" target="_blank" title="Facebook" rel="noreferrer noopener"
-              class="mr-2"><i class="icon-facebook"></i></a>
+              class="mr-2"><i class="icon-facebook" aria-hidden="true"></i></a>
             <a href="https://www.instagram.com/" target="_blank" title="Instagram" rel="noreferrer noopener"><i
-                class="icon-instagram"></i></a>
+                class="icon-instagram" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -56,9 +58,18 @@
           </a>
         </div>
 
+        <!-- Toggle menu-mobile -->
+        <div class="wrap-toggle d-flex align-items-center d-lg-none">
+          <button id="menu-toggle" class="toggle" aria-label="Apri menu di navigazione" aria-controls="main-menu"
+            aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
 
         <!-- menu-wrap Menu-desktop -->
-        <nav class="nav-container" role="navigation" aria-label="Menu principale">
+        <nav role="navigation" class="nav-container" aria-label="Menu principale">
 
           <!-- Menu -->
           <?php wp_nav_menu([
@@ -75,7 +86,8 @@
 
           <!-- CTA Call -->
           <div class="cta-btn-phone stagger">
-            <a href="tel:+390383212368" title="Chiamaci"><i class="icon-phone"></i> 0383 21 23 68</a>
+            <a href="tel:+390383212368" title="Contattaci via telefono"><i class="icon-phone" aria-hidden="true"></i>
+              0383 21 23 68</a>
           </div>
 
           <!-- Only Mobile -->
@@ -83,9 +95,9 @@
             <hr class="divider-mobile">
             <div class="social-mobile">
               <a href="https://www.facebook.com" target="_blank" title="Facebook" rel="noreferrer noopener"
-                class="circle-icon"><i class="icon-facebook"></i></a>
+                class="circle-icon"><i class="icon-facebook" aria-hidden="true"></i></a>
               <a href="https://www.instagram.com" target="_blank" title="Instagram" rel="noreferrer noopener"
-                class="circle-icon"><i class="icon-instagram"></i></a>
+                class="circle-icon"><i class="icon-instagram" aria-hidden="true"></i></a>
             </div>
           </div>
 
@@ -95,21 +107,14 @@
                 home_url()
             ); ?>" method="get">
 
-              <input class="form-input" type="search" placeholder="Cerca..." aria-label="Search" name="s">
-              <button type="submit"><i class="icon-my-search" aria-hidden="true"></i></button>
+              <input class="form-input" type="search" placeholder="Cerca..." name="s">
+              <button type="submit" aria-label="Cerca"><i class="icon-my-search" aria-hidden="true"></i></button>
             </form>
           </div>
 
         </nav><!-- ./nv-container -->
 
-        <!-- Toggle menu-mobile -->
-        <div class="wrap-toggle d-flex align-items-center d-lg-none">
-          <div class="toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
+
       </div>
       <!-- ./navigator -->
 
@@ -160,4 +165,4 @@
 
 
   <!-- MAIN CONTENT close in footer-->
-  <main id="main-content">
+  <main role="main" id="main-content">

@@ -155,6 +155,23 @@ blockquote h6 {
   margin-bottom: 15px;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #ff0000 !important;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+button:focus {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 /* ! container
 ------------------------------------*/
 .container {
@@ -774,14 +791,25 @@ li.menu-item-has-children a:before {
   position: relative;
 }
 .wrap-toggle .toggle {
+  background-color: transparent;
   width: 32px;
   height: 20px;
+  border: none;
   position: relative;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;
+}
+.wrap-toggle .toggle:focus {
+  background-color: transparent;
+  background: transparent;
+  border: none;
+}
+.wrap-toggle .toggle:visited {
+  background-color: transparent;
+  background: transparent;
 }
 .wrap-toggle .toggle span {
   display: block;

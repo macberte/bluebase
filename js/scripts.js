@@ -27,6 +27,15 @@ jQuery(document).ready(function ($) {
     $menuNav.toggleClass("open");
     $toggleMenu.toggleClass("open");
     $body.toggleClass("open-menu");
+
+    /*Accessibility ACT*/
+    var expanded = $(this).attr("aria-expanded") === "true";
+
+    $(this).attr("aria-expanded", !expanded);
+    $(this).attr(
+      "aria-label",
+      expanded ? "Apri il menu di navigazione" : "Chiudi il menu di navigazione"
+    );
   });
 
   //Accordion Menu mobile slideDown
@@ -345,9 +354,9 @@ jQuery(document).ready(function ($) {
         var yBgPosition = Math.round(
           (offset - scrollTop - 200) * settings.speed
         );
-        console.log("offset:" + offset);
-        console.log("scrollTop:" + scrollTop);
-        console.log("yBgPosition:" + yBgPosition);
+        // console.log("offset:" + offset);
+        // console.log("scrollTop:" + scrollTop);
+        // console.log("yBgPosition:" + yBgPosition);
         // Apply the Y Background Position to Set the Parallax Effect
         $this.css("top", +yBgPosition + "px");
       });
@@ -414,7 +423,7 @@ jQuery(document).ready(function ($) {
   );
 
   /* --------------------------------------------------------
-  Accordion Tag
+  ! Accordion Tag
   -------------------------------------------------------- */
   var btnMetaAccordion = $(".btn-accordion-meta");
   var wrapMetaAccordion = $(".meta-accordion-wrap");
@@ -424,10 +433,14 @@ jQuery(document).ready(function ($) {
     metaAccordion.slideToggle(200);
     $(this).toggleClass("visible");
     wrapMetaAccordion.toggleClass("visible");
+
+    /*Accessibility ACT*/
+    var accordionExpanded = $(this).attr("aria-expanded") === "true";
+    $(this).attr("aria-expanded", !expanded);
   });
 
   /* =========================================================
-  Click Search
+  ! Click Search
   /*=========================================================*/
   var searchButton = $(".btn-search"),
     searchWall = $(".live-search-wall"),

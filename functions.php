@@ -398,12 +398,17 @@ add_filter('wp_nav_menu_args', 'add_role_to_menu_ul');
 
 /* Aggiunge role="menuitem" ai <li> del menu 
 --------------------------------------------------------------------------*/
-function add_role_to_menu_li_elements($menu) {
-  // Aggiunge role="menuitem" a tutti i <li> del menu
-  $menu = str_replace('<li', '<li role="menuitem"', $menu);
+function add_role_to_main_menu_items($menu, $args) {
+  // Applica solo al menu 'main-menu'
+  if ($args->theme_location === 'main-menu') {
+    // Aggiunge role="menuitem" solo ai <li> del menu
+    $menu = preg_replace('/<li([^>]*)>/', '<li$1 role="menuitem">', $menu);
+  }
+
   return $menu;
 }
-add_filter('wp_nav_menu', 'add_role_to_menu_li_elements', 20);
+add_filter('wp_nav_menu', 'add_role_to_main_menu_items', 20, 2);
+
 
 
 /* Aggiunge aria-haspopup e aria-expanded ai link con figli 
